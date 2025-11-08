@@ -76,9 +76,13 @@ Total development time: 51 hours (and more for future developments)
 
 ## 🛠 Tech Stack
 
-- **Frontend:** Vanilla JS/TS, HTML5 Canvas, raw DOM
-- **Backend:** Node.js, WebSockets (Socket.io or native)
-- **No frameworks/libraries** for drawing or UI
+- **Frontend:** JavaScript
+- **UI:** Canvas
+- **RealTime:** Socket.IO
+- **Backend:** Node.js
+- **Framework:** Express
+- **PackageManager:** npm
+- **Hosting:** RENDER
 
 
 ## 💬 Author info

@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Collaborative Canvas</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Login Screen -->
+  <div id="login">
+    <div class="login-box">
+      <h2>🎨 Collaborative Canvas</h2>
+      
+      <input id="usernameInput" type="text" placeholder="Enter your name..." />
+      
+      <div class="room-options">
+        <button id="createRoomBtn" class="room-btn">Create New Room</button>
+        <div class="divider">OR</div>
+        <input id="roomIdInput" type="text" placeholder="Enter Room ID..." />
+        <button id="joinRoomBtn" class="room-btn">Join Room</button>
+      </div>
+
+      <div id="roomInfo" class="room-info" style="display:none;">
+        <p>Room ID: <strong id="displayRoomId"></strong></p>
+        <button id="copyRoomBtn">📋 Copy Room ID</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main App -->
+  <div id="app" style="display:none;">
+    <!-- Drawing Toolbar -->
+    <div class="toolbar">
+      <h3>🎨 Tools</h3>
+      
+      <div class="tool-section">
+        <label>Color</label>
+        <input type="color" id="colorPicker" value="#000000">
+      </div>
+
+      <div class="tool-section">
+        <label>Brush Size: <span id="brushSizeValue">3</span>px</label>
+        <input type="range" id="brushSize" min="1" max="30" value="3">
+      </div>
+
+      <!-- REORGANIZED: Vertical tool buttons with brush dropdown -->
+      <div class="tool-section">
+        <label>Drawing Tools</label>
+        <div class="tool-buttons-vertical">
+          <div class="brush-container">
+            <button id="brushBtn" class="tool-btn active" title="Brush">🖌️</button>
+            <!-- Brush style dropdown menu -->
+            <div id="brushStyleMenu" class="brush-style-menu">
+              <div class="brush-style-option selected" data-style="normal">
+                <span>🖌️</span> Normal
+              </div>
+              <div class="brush-style-option" data-style="pixel">
+                <span>🟦</span> Pixel
+              </div>
+              <div class="brush-style-option" data-style="airbrush">
+                <span>💨</span> Airbrush
+              </div>
+              <div class="brush-style-option" data-style="spray">
+                <span>🎨</span> Spray Paint
+              </div>
+              <div class="brush-style-option" data-style="calligraphy">
+                <span>✒️</span> Calligraphy
+              </div>
+              <div class="brush-style-option" data-style="sketch">
+                <span>✏️</span> Sketch
+              </div>
+            </div>
+          </div>
+          <button id="eraserBtn" class="tool-btn" title="Eraser">🧹</button>
+          <button id="bucketBtn" class="tool-btn" title="Fill Bucket">🪣</button>
+        </div>
+      </div>
+
+      <div class="action-buttons">
+        <button id="templateBtn" class="action-btn template" title="Templates">
+          🖼️ Templates
+        </button>
+        <button id="uploadBtn" class="action-btn upload" title="Upload Image">
+          📁 Upload
+        </button>
+        <input type="file" id="fileInput" accept="image/*" style="display:none;">
+        <button id="undoBtn" class="action-btn" title="Undo">↶ Undo</button>
+        <button id="redoBtn" class="action-btn" title="Redo">↷ Redo</button>
+        <button id="clearBtn" class="action-btn danger" title="Clear Canvas">🗑️ Clear</button>
+      </div>
+
+      <div class="user-info">
+        <strong>Your Color:</strong>
+        <div id="userColorIndicator" class="color-indicator"></div>
+      </div>
+    </div>
+
+    <!-- Canvas (Full Page) -->
+    <canvas id="board"></canvas>
+
+    <!-- Cursors Container -->
+    <div id="cursorsContainer"></div>
+
+    <!-- Room Info Badge -->
+    <div class="room-badge">
+      <span id="roomBadge"></span>
+    </div>
+
+    <!-- Online Users Badge -->
+    <div class="users-badge">
+      <span id="userCount">0</span> 👥
+    </div>
+
+    <!-- Chat Toggle Button -->
+    <button id="chatToggle" class="chat-toggle">
+      💬 Chat
+    </button>
+
+    <!-- Chat Sidebar -->
+    <div id="chatSidebar" class="chat-sidebar">
+      <div class="chat-header">
+        <h3>💬 Chat</h3>
+        <button id="closeChatBtn" class="close-btn">✕</button>
+      </div>
+
+      <div class="online-users">
+        <strong>Online:</strong>
+        <div id="usersList"></div>
+      </div>
+      
+      <ul id="messages"></ul>
+      
+      <form id="form" class="chat-form">
+        <input id="input" autocomplete="off" placeholder="Type a message..." />
+        <button type="submit">Send</button>
+      </form>
+    </div>
+
+    <!-- Template Gallery Modal -->
+    <div id="templateModal" class="modal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2>🖼️ Choose a Template</h2>
+          <button id="closeTemplateModal" class="close-btn">✕</button>
+        </div>
+        <div class="template-grid" id="templateGrid">
+          <!-- Templates will be loaded here -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>

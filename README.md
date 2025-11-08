@@ -7,7 +7,7 @@ A multi-user drawing application that enables simultaneous canvas collaboration 
 - **Simultaneous Drawing:** Multiple users can draw in real time.
 - **Canvas Tools:** Brush, eraser, various colors, stroke width options.
 - **User Indicators:** Display active users and their cursor positions.
-- **Global Undo/Redo:** Changes affect all users (see [ARCHITECTURE.md](ARCHITECTURE.md)).
+- **Global Undo/Redo:** Changes affect all users (see [Architecture.md](Architecture.md)).
 - **Conflict Handling:** Overlapping actions are intelligently managed.
 - **User Management:** Shows online users and assigns them unique colors.
 
@@ -65,9 +65,9 @@ README.md
 
 ## 🚨 Known Limitations & Bugs
 
-- Undo/redo may briefly desync under heavy concurrent edits.
-- Mobile drawing support is experimental (see issues).
-- No drawing persistence (session clears on server restart).
+- Undo/redo doesn't work for first stroke.
+- Mobile drawing support is experimental.
+- No drawing persistence once link.
 - High latency can cause cursor lag on slow networks.
 
 ## ⏱️ Time Spent
@@ -85,7 +85,7 @@ Total development time: 51 hours (and more for future developments)
 
 Author: _Shrie Varshini_  
 Email: _shrievarshini.2004@gmail.com_  
-Demo: _https://www.notion.so/flamapp/Real-Time-Collaborative-Drawing-Canvas2a178ca0ce5281a89343f22a8bbbffd5_  
+Demo: _https://collaborative-canvas-s833.onrender.com_  
 Repo: _https://github.com/ShrieVarshini2004/collaborative-canvas/tree/main_
 
 ---

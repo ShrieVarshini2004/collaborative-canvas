@@ -13,22 +13,24 @@ A multi-user drawing application that enables simultaneous canvas collaboration 
 
 ## 🗂️ Project Structure
 
-collaborative-canvas/
-├── client/
-│   ├── index.html             # Main HTML file
-│   ├── style.css              # App styling
-│   ├── canvas.js              # Canvas drawing logic
-│   ├── websocket.js           # WebSocket client logic
-│   └── main.js                # App initialization and event handling
-│
-├── server/
-│   ├── server.js              # Express + WebSocket server
-│   ├── rooms.js               # Room management logic
-│   └── drawing-state.js       # Canvas state, undo/redo, and sync handling
-│
-├── package.json
-├── README.md
-└── ARCHITECTURE.md            # Detailed technical documentation
+```
+client
+├── canvas.js
+├── index.html
+├── main.js
+├── style.css
+└── websocket.js
+node_modules
+server
+├── drawing-state.js
+├── index.html
+├── rooms.js
+└── server.js
+Architecture.md
+package-lock.json
+package.json
+README.md
+```
 
 ## ⚡ Setup Instructions
 
@@ -81,11 +83,11 @@ Total development time: 51 hours (and more for future developments)
 
 ## 💬 Author info
 
-Author: _[Your Name]_  
-Email: _[your.email@example.com]_  
-Demo: _[URL to deployed app (Heroku, Vercel, etc.)]_  
-Repo: [https://github.com/yourusername/collaborative-canvas](https://github.com/yourusername/collaborative-canvas)
+Author: _Shrie Varshini_  
+Email: _shrievarshini.2004@gmail.com_  
+Demo: _https://www.notion.so/flamapp/Real-Time-Collaborative-Drawing-Canvas2a178ca0ce5281a89343f22a8bbbffd5_  
+Repo: _https://github.com/ShrieVarshini2004/collaborative-canvas/tree/main_
 
 ---
 
-For architectural details, data flow diagrams, protocol specs, and performance notes, see [ARCHITECTURE.md](ARCHITECTURE.md).
+For architectural details, data flow diagrams, protocol specs, and performance notes, see [Architecture.md](Architecture.md).

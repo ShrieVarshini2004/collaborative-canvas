@@ -89,8 +89,8 @@ Total development time: 51 hours (and more for future developments)
 
 Author: _Shrie Varshini_  
 Email: _shrievarshini.2004@gmail.com_  
-Demo: _https://collaborative-canvas-s833.onrender.com_  
-website URL: 
+Demo: _https://drive.google.com/file/d/1SILHi54vrx357JX3_F4Slaw27JfN9g7M/view?usp=sharing_  
+website URL: https://collaborative-canvas-s833.onrender.com
 Repo: _https://github.com/ShrieVarshini2004/collaborative-canvas/tree/main_
 
 ---
